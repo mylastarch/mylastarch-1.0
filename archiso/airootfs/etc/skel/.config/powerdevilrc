@@ -1,0 +1,13 @@
+[AC][Display]
+DimDisplayIdleTimeoutSec=-1
+DimDisplayWhenIdle=false
+TurnOffDisplayIdleTimeoutSec=-1
+TurnOffDisplayIdleTimeoutWhenLockedSec=300
+TurnOffDisplayWhenIdle=false
+
+[AC][SuspendAndShutdown]
+AutoSuspendAction=0
+
+[Activities][9b6cb813-1558-4e4e-a4fa-69fe861fa09f]
+InhibitScreenManagement=true
+InhibitSuspend=true

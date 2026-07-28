@@ -1,0 +1,9 @@
+[Desktop Entry]
+Type=Application
+Name=Variety: Random wallpaper
+Comment=Change wallpaper using Variety
+Exec=variety
+Icon=preferences-desktop-wallpaper
+Terminal=false
+Categories=Utility;Graphics;
+Keywords=wallpaper;variety;random;

@@ -1,0 +1,17 @@
+[Added Associations]
+application/json=sublime_text.desktop;
+application/pdf=masterpdfeditor4.desktop;
+application/x-docbook+xml=sublime_text.desktop;
+application/x-yaml=sublime_text.desktop;
+text/markdown=sublime_text.desktop;
+text/plain=sublime_text.desktop;
+text/x-cmake=sublime_text.desktop;
+
+[Default Applications]
+application/json=sublime_text.desktop;
+application/pdf=masterpdfeditor4.desktop;
+application/x-docbook+xml=sublime_text.desktop;
+application/x-yaml=sublime_text.desktop;
+text/markdown=sublime_text.desktop;
+text/plain=sublime_text.desktop;
+text/x-cmake=sublime_text.desktop;

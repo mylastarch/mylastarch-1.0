@@ -1,0 +1,20 @@
+[Unit]
+Description=Copy Variety's current wallpaper to Plasma Login Manager
+Before=display-manager.service
+
+[Service]
+Type=oneshot
+ExecStart=/usr/local/libexec/plm-wallpaper-sync
+User=root
+Group=root
+NoNewPrivileges=true
+PrivateTmp=true
+ProtectHome=read-only
+ProtectSystem=strict
+ProtectKernelLogs=true
+ProtectKernelModules=true
+ProtectKernelTunables=true
+ProtectControlGroups=true
+RestrictSUIDSGID=true
+ReadWritePaths=/var/lib/plasmalogin/wallpapers
+

@@ -1,0 +1,70 @@
+#!/usr/bin/env bash
+set -euo pipefail
+
+destination="/var/lib/plasmalogin/wallpapers/01.jpg"
+destination_dir="${destination%/*}"
+maximum_size=$((100 * 1024 * 1024))
+best_source=""
+best_mtime=-1
+
+while IFS=: read -r _ _ uid _ _ home _; do
+    [[ "$uid" =~ ^[0-9]+$ ]] || continue
+    (( uid >= 1000 && uid <= 60000 )) || continue
+    [[ "$home" == /* && -d "$home" ]] || continue
+
+    pointer="${home}/.config/variety/wallpaper/wallpaper.jpg.txt"
+    [[ -f "$pointer" && ! -L "$pointer" ]] || continue
+    [[ "$(stat -c %u -- "$pointer" 2>/dev/null)" == "$uid" ]] || continue
+
+    source=""
+    IFS= read -r source < "$pointer" || true
+    source="${source#file://}"
+    [[ "$source" == /* ]] || continue
+
+    canonical="$(realpath -e -- "$source" 2>/dev/null)" || continue
+    [[ -f "$canonical" ]] || continue
+
+    case "$canonical" in
+        "${home}/"*)
+            [[ "$(stat -c %u -- "$canonical" 2>/dev/null)" == "$uid" ]] || continue
+            ;;
+        /usr/share/wallpapers/*|/usr/share/backgrounds/*)
+            [[ "$(stat -c %u -- "$canonical" 2>/dev/null)" == 0 ]] || continue
+            ;;
+        *)
+            continue
+            ;;
+    esac
+
+    size="$(stat -c %s -- "$canonical" 2>/dev/null)" || continue
+    (( size > 0 && size <= maximum_size )) || continue
+
+    mime_type="$(file -Lb --mime-type -- "$canonical" 2>/dev/null)" || continue
+    case "$mime_type" in
+        image/jpeg|image/png|image/webp) ;;
+        *) continue ;;
+    esac
+
+    mtime="$(stat -c %Y -- "$pointer" 2>/dev/null)" || continue
+    if (( mtime > best_mtime )); then
+        best_source="$canonical"
+        best_mtime="$mtime"
+    fi
+done < <(getent passwd)
+
+# Keep the packaged static wallpaper when Variety has not produced a valid image.
+[[ -n "$best_source" ]] || exit 0
+
+install -d -m 0750 -o plasmalogin -g plasmalogin "$destination_dir"
+if [[ -f "$destination" ]] && cmp -s -- "$best_source" "$destination"; then
+    exit 0
+fi
+
+temporary="$(mktemp -p "$destination_dir" .01.jpg.XXXXXX)"
+trap 'rm -f -- "$temporary"' EXIT
+cp --reflink=auto -- "$best_source" "$temporary"
+chown plasmalogin:plasmalogin "$temporary"
+chmod 0644 "$temporary"
+mv -f -- "$temporary" "$destination"
+trap - EXIT
+

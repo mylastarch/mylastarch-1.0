@@ -1,0 +1,13 @@
+[Desktop Entry]
+Type=Application
+Version=1.0
+Name=Install MY LAST ARCH
+GenericName=System Installer
+Keywords=calamares;system;installer;
+TryExec=/usr/local/bin/calamares_polkit
+Exec=/usr/local/bin/calamares_polkit
+Icon=calamares
+Terminal=false
+StartupNotify=true
+Categories=Qt;System;
+X-AppStream-Ignore=true

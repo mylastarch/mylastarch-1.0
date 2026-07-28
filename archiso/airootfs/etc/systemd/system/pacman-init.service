@@ -1,0 +1,17 @@
+[Unit]
+Description=Initializes Pacman keyring
+Requires=etc-pacman.d-gnupg.mount
+After=etc-pacman.d-gnupg.mount time-sync.target
+BindsTo=etc-pacman.d-gnupg.mount
+Before=archlinux-keyring-wkd-sync.service
+
+[Service]
+Type=oneshot
+RemainAfterExit=yes
+ExecStart=/usr/bin/pacman-key --init
+ExecStart=/usr/bin/pacman-key --populate
+ExecStart=/usr/bin/pacman-key --populate mylastarch
+ExecStart=-/usr/bin/pacman-key --lsign-key C8B25E49B0428123
+
+[Install]
+WantedBy=multi-user.target

@@ -1,0 +1,19 @@
+#!/usr/bin/env bash
+set -euo pipefail
+
+echo "#################################"
+echo "Start mylastarch-before"
+echo "#################################"
+echo "Populate Core Team keys"
+echo "#################################"
+pacman-key --init
+pacman-key --populate
+echo "Putting grub theme in again"
+echo "#################################"
+install -d /boot/grub/themes
+cp -a /usr/share/grub/themes/viper /boot/grub/themes/
+
+echo "#################################"
+echo "End mylastarch-before"
+echo "#################################"
+rm -f /usr/local/bin/mylastarch-before

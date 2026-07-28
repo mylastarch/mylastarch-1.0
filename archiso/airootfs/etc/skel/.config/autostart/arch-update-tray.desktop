@@ -1,0 +1,7 @@
+[Desktop Entry]
+Categories=Utility
+Comment=Systray applet for Arch-Update
+Exec=arch-update --tray
+Icon=arch-update_updates-available-blue
+Name=Arch-Update Systray Applet
+Type=Application

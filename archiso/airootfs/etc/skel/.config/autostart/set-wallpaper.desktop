@@ -1,0 +1,8 @@
+[Desktop Entry]
+Type=Application
+Name=Set Slideshow Wallpaper
+Exec=/bin/bash /usr/local/bin/set-wallpaper-launcher.sh
+OnlyShowIn=KDE;
+X-KDE-autostart-phase=2
+X-KDE-StartupNotify=false
+X-KDE-AutostartEnabled=true

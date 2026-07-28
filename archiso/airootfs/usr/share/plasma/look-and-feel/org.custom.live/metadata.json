@@ -1,0 +1,8 @@
+{
+"id":"org.custom.live",
+"name":"Custom Live Look-and-Feel",
+"package":"org.custom.live",
+"version":"1.0",
+"description": "Sets Live Session Wallpaper",
+"plugin":"org.kde.look-and-feel"
+}

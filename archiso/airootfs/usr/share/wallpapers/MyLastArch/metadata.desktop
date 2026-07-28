@@ -1,0 +1,8 @@
+[Wallpaper]
+Name=Custom Live Wallpaper
+Plugin=org.kde.image
+X-KDE-PluginInfo-Author=Dan Cihon
+X-KDE-PluginInfo-Name=custom-wallpaper
+X-KDE-PluginInfo-Version=1.0
+X-KDE-PluginInfo-Website=
+Borderless=false

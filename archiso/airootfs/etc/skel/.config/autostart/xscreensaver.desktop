@@ -1,0 +1,8 @@
+[Desktop Entry]
+#Exec=xscreensaver --log $HOME/Documents/xscreensaver.log
+Exec=xscreensaver --no-splash
+Name=XScreenSaver
+Type=Application
+StartupNotify=false
+X-KDE-StartupNotify=false
+
