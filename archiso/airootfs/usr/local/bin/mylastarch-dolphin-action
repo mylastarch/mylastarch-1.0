@@ -1,0 +1,88 @@
+#!/usr/bin/env bash
+set -euo pipefail
+
+action="${1:-}"
+shift || true
+
+selected_path="${1:-$PWD}"
+if [[ -d "$selected_path" ]]; then
+    selected_directory="$selected_path"
+else
+    selected_directory="$(dirname -- "$selected_path")"
+fi
+
+case "$action" in
+    terminal)
+        exec konsole --workdir "$selected_directory"
+        ;;
+    meld)
+        exec meld "$@"
+        ;;
+    format-usb)
+        exec partitionmanager
+        ;;
+    gittyup)
+        exec gittyup "$selected_directory"
+        ;;
+    dolphin-root)
+        exec dolphin "admin://$selected_path"
+        ;;
+    duckai)
+        exec xdg-open "https://duck.ai/"
+        ;;
+    convert)
+        output_format="${1:-}"
+        shift || true
+
+        case "$output_format" in
+            jpg|png|webp) ;;
+            *)
+                printf 'Unsupported image format: %s\n' "$output_format" >&2
+                exit 2
+                ;;
+        esac
+
+        for source_path in "$@"; do
+            [[ -f "$source_path" ]] || continue
+
+            source_directory="$(dirname -- "$source_path")"
+            source_filename="$(basename -- "$source_path")"
+            source_stem="${source_filename%.*}"
+            output_path="$source_directory/${source_stem}-converted.$output_format"
+            suffix=2
+
+            while [[ -e "$output_path" ]]; do
+                output_path="$source_directory/${source_stem}-converted-$suffix.$output_format"
+                ((suffix += 1))
+            done
+
+            magick "$source_path" "$output_path"
+        done
+        ;;
+    hidden-files)
+        while IFS= read -r service_name; do
+            service_name="${service_name#"${service_name%%[![:space:]]*}"}"
+            service_name="${service_name%"${service_name##*[![:space:]]}"}"
+            [[ "$service_name" == org.kde.dolphin* ]] || continue
+
+            while IFS= read -r object_path; do
+                object_path="${object_path#"${object_path%%[![:space:]]*}"}"
+                object_path="${object_path%"${object_path##*[![:space:]]}"}"
+                [[ "$object_path" =~ ^/dolphin/Dolphin_[0-9]+$ ]] || continue
+
+                is_active="$(qdbus6 "$service_name" "$object_path" org.qtproject.Qt.QWidget.isActiveWindow 2>/dev/null || true)"
+                if [[ "$is_active" == true ]]; then
+                    qdbus6 "$service_name" "$object_path/actions/show_hidden_files" org.qtproject.Qt.QAction.trigger
+                    exit 0
+                fi
+            done < <(qdbus6 "$service_name" 2>/dev/null || true)
+        done < <(qdbus6 2>/dev/null || true)
+
+        printf 'Could not find the active Dolphin window.\n' >&2
+        exit 1
+        ;;
+    *)
+        printf 'Unknown Dolphin action: %s\n' "$action" >&2
+        exit 2
+        ;;
+esac

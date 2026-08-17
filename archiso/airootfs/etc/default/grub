@@ -1,6 +1,6 @@
 # GRUB boot loader configuration
 
-GRUB_DEFAULT=0
+GRUB_DEFAULT=saved
 GRUB_TIMEOUT=5
 GRUB_DISTRIBUTOR="mylastarch"
 GRUB_CMDLINE_LINUX_DEFAULT="loglevel=3 quiet audit=0"
@@ -53,10 +53,10 @@ GRUB_THEME=/boot/grub/themes/viper/theme.txt
 # Uncomment to make GRUB remember the last selection. This requires
 # setting 'GRUB_DEFAULT=saved' above. Change 0 into saved.
 # Do not forget to 'update-grub' in a terminal to apply the new settings
-#GRUB_SAVEDEFAULT="true"
+GRUB_SAVEDEFAULT="true"
 
 # Uncomment to disable submenus in boot menu
-#GRUB_DISABLE_SUBMENU=y
+GRUB_DISABLE_SUBMENU=y
 
 # Probing for other operating systems is disabled for security reasons. Read
 # documentation on GRUB_DISABLE_OS_PROBER, if still want to enable this

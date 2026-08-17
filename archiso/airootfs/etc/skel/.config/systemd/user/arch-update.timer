@@ -3,7 +3,7 @@ Description=Run arch-update auto check at boot and then every 10 minutes
 
 [Timer]
 OnStartupSec=15
-OnUnitActiveSec=10m
+OnUnitActiveSec=15m
 
 [Install]
 WantedBy=timers.target

@@ -1,0 +1,22 @@
+[Desktop Entry]
+Type=Service
+Name=Convert Image
+MimeType=image/jpeg;image/png;image/webp;
+X-KDE-Protocols=file
+X-KDE-Submenu=Convert Image
+Actions=convert-jpeg;convert-png;convert-webp;
+
+[Desktop Action convert-jpeg]
+Name=Convert to JPEG
+Icon=image-jpeg
+Exec=/usr/local/bin/mylastarch-dolphin-action convert jpg %F
+
+[Desktop Action convert-png]
+Name=Convert to PNG
+Icon=image-png
+Exec=/usr/local/bin/mylastarch-dolphin-action convert png %F
+
+[Desktop Action convert-webp]
+Name=Convert to WebP
+Icon=image-webp
+Exec=/usr/local/bin/mylastarch-dolphin-action convert webp %F

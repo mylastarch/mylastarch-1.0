@@ -205,22 +205,6 @@ plugin=org.kde.plasma.marginsseparator
 DialogHeight=540
 DialogWidth=720
 
-[Containments][162][Applets][204]
-immutability=1
-plugin=zayron.simple.separator
-
-[Containments][162][Applets][204][Configuration]
-popupHeight=400
-popupWidth=560
-
-[Containments][162][Applets][205]
-immutability=1
-plugin=zayron.simple.separator
-
-[Containments][162][Applets][205][Configuration]
-popupHeight=400
-popupWidth=560
-
 [Containments][162][Applets][206]
 immutability=1
 plugin=org.kde.plasma.windowlist
@@ -237,7 +221,7 @@ DialogWidth=720
 showText=false
 
 [Containments][162][General]
-AppletOrder=164;196;183;195;205;167;206;168;201;181;199;180;204
+AppletOrder=164;196;183;195;167;206;168;201;181;199;180
 
 [Containments][213]
 ItemGeometries-1280x800=
@@ -248,10 +232,10 @@ immutability=1
 lastScreen=0
 location=0
 plugin=org.kde.plasma.folder
-wallpaperplugin=org.kde.slideshow
+wallpaperplugin=org.kde.image
 
-[Containments][213][Wallpaper][org.kde.slideshow][General]
-SlideInterval=300
+[Containments][213][Wallpaper][org.kde.image][General]
+Image=file:///usr/share/wallpapers/MyLastArch/contents/images/mylastarch.png
 
 [ScreenMapping]
 itemsOnDisabledScreens=

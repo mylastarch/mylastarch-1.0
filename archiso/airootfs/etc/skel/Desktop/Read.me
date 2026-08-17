@@ -1,0 +1,33 @@
+Username = default
+Password - default
+
+This can be changed in system settings - Users
+
+Autologin is in effect for the default user.
+That can be changed in the /etc/plasmalogin.conf
+
+
+Operating System: MY LAST ARCH Linux 
+KDE Plasma Version: 6.7.3
+KDE Frameworks Version: 6.28.0
+Qt Version: 6.11.1
+Kernel Version: 7.1.5-arch1-2 (64-bit)
+Graphics Platform: Wayland
+Processors: 4 × Intel® Core™ i5-2415M CPU @ 2.30GHz
+Memory: 4 GiB of RAM (3.7 GiB usable)
+Graphics Processor: Mesa Intel® HD Graphics 3000
+Manufacturer: Apple Inc.
+Product Name: MacBookPro8,1
+System Version: 1.0
+
+You can email me at danc@dccathome.com or visit my website at www.dccwebsite.com if you need help or have questions
+
+Note the linux-mainline choice is a future kernel in testing. If you choose it you could have issues. It is for testing purposes only.
+
+Note: Macbook has an issue with lid closed on Arch Linux. 
+Before doing the install the package "debugedit" needs to be installed.
+Install from yay the following command:
+yay -S macbook-12-1-linux=fixes
+
+Also add this to default grub file:
+   mem_sleep_default=s2idle

@@ -1,0 +1,12 @@
+[Desktop Entry]
+Type=Service
+Name=Show/Hide Hidden Files
+MimeType=inode/directory;
+X-KDE-Protocols=file
+X-KDE-Priority=TopLevel
+Actions=hiddenfiletoggle;
+
+[Desktop Action hiddenfiletoggle]
+Name=Show/Hide Hidden Files
+Icon=view-visible
+Exec=/usr/local/bin/mylastarch-dolphin-action hidden-files

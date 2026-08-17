@@ -1,0 +1,37 @@
+[Desktop Entry]
+Type=Service
+Name=Actions
+MimeType=inode/directory;application/octet-stream;
+X-KDE-Protocols=file
+X-KDE-Submenu=Actions
+Actions=open-terminal;compare-meld;format-usb;open-gittyup;open-dolphin-root;open-duckai;
+
+[Desktop Action open-terminal]
+Name=Open terminal here
+Icon=utilities-terminal
+Exec=/usr/local/bin/mylastarch-dolphin-action terminal %F
+
+[Desktop Action compare-meld]
+Name=Compare using Meld
+Icon=meld
+Exec=/usr/local/bin/mylastarch-dolphin-action meld %F
+
+[Desktop Action format-usb]
+Name=Format USB
+Icon=drive-removable-media-usb
+Exec=/usr/local/bin/mylastarch-dolphin-action format-usb %F
+
+[Desktop Action open-gittyup]
+Name=Open with Gittyup
+Icon=gittyup
+Exec=/usr/local/bin/mylastarch-dolphin-action gittyup %F
+
+[Desktop Action open-dolphin-root]
+Name=Open Dolphin as root
+Icon=folder-root
+Exec=/usr/local/bin/mylastarch-dolphin-action dolphin-root %F
+
+[Desktop Action open-duckai]
+Name=Open DuckDuckGo AI here
+Icon=internet-web-browser
+Exec=/usr/local/bin/mylastarch-dolphin-action duckai %F
