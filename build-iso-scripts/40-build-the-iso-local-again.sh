@@ -157,17 +157,17 @@ echo
 		sed -i "s/^ISO_BUILD=.*/ISO_BUILD=$date_build/" "$buildFolder/archiso/airootfs/etc/dev-rel"
 
 
-#echo
-#echo "################################################################## "
-#tput setaf 2
-#echo "Phase 6 :"
-#echo "- Cleaning the cache from /var/cache/pacman/pkg/"
-#tput sgr0
-#echo "################################################################## "
-#echo
+echo
+echo "################################################################## "
+tput setaf 2
+echo "Phase 6 :"
+echo "- Cleaning the cache from /var/cache/pacman/pkg/"
+tput sgr0
+echo "################################################################## "
+echo
 
-	#echo "Cleaning the cache from /var/cache/pacman/pkg/"
-	#yes | sudo pacman -Scc
+	echo "Cleaning the cache from /var/cache/pacman/pkg/"
+	yes | sudo pacman -Scc
 
 echo
 echo "################################################################## "

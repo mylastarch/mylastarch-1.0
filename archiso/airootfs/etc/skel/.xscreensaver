@@ -17,7 +17,7 @@ nice:		10
 fade:		True
 unfade:		True
 fadeSeconds:	0:00:03
-ignoreUninstalledPrograms:False
+ignoreUninstalledPrograms:True
 dpmsEnabled:	False
 dpmsQuickOff:	False
 dpmsStandby:	2:00:00
@@ -26,12 +26,12 @@ dpmsOff:	4:00:00
 grabDesktopImages:  False
 grabVideoFrames:    False
 chooseRandomImages: True
-imageDirectory:	~/Pictures/cloud pictures/
+imageDirectory:	/usr/share/backgrounds/mylastarch/xscreensaver-images/
 
 mode:		random
 selected:	-1
 
-textMode:	file
+textMode:	literal
 textLiteral:	XScreenSaver
 textFile:	
 textProgram:	fortune
@@ -78,7 +78,7 @@ programs:								      \
 				munch --root				    \n\
 				penrose --root				    \n\
   GL: 				pipes --root				    \n\
--				rd-bomb --root				    \n\
+				rdbomb --root				    \n\
   GL: 				rubik --root				    \n\
 				sierpinski --root			    \n\
 				slip --root				    \n\
@@ -104,17 +104,16 @@ programs:								      \
 				kumppa --root				    \n\
   GL: 				lament --root				    \n\
 				moire2 --root				    \n\
-  GL: 				sonar --root				    \n\
+  GL: 				sonar --root --ping subnet		    \n\
   GL: 				stairs --root				    \n\
 				truchet --root				    \n\
-				vidwhacker --root			    \n\
+-				vidwhacker --root			    \n\
 				blaster --root				    \n\
 				bumps --root				    \n\
 				ccurve --root				    \n\
 				compass --root				    \n\
 				deluxe --root				    \n\
 				demon --root				    \n\
-- GL: 				extrusion --root			    \n\
 				loop --root				    \n\
 				penetrate --root			    \n\
 				petri --root				    \n\
@@ -126,7 +125,7 @@ programs:								      \
 				spotlight --root			    \n\
 				squiral --root				    \n\
 				wander --root				    \n\
-				webcollage --root			    \n\
+-				webcollage --root			    \n\
 				xflame --root				    \n\
 				xmatrix --root				    \n\
   GL: 				gflux --root				    \n\
@@ -135,7 +134,6 @@ programs:								      \
 				xspirograph --root			    \n\
   GL: 				circuit --root				    \n\
   GL: 				dangerball --root			    \n\
-- GL: 				dnalogo --root				    \n\
   GL: 				engine --root				    \n\
   GL: 				flipscreen3d --root			    \n\
   GL: 				gltext --root				    \n\
@@ -166,7 +164,6 @@ programs:								      \
   GL: 				queens --root				    \n\
   GL: 				sballs --root				    \n\
   GL: 				spheremonics --root			    \n\
--				thornbird --root			    \n\
 				twang --root				    \n\
   GL: 				antspotlight --root			    \n\
 				apple2 --root				    \n\
@@ -284,8 +281,6 @@ programs:								      \
   GL: 				sphereeversion --root			    \n\
 				binaryhorizon --root			    \n\
 				marbling --root				    \n\
-		     "ATV4-2k" 	atv4-2k					    \n\
-  any: 		     "ATV4-4k" 	atv4-4k					    \n\
   GL: 				chompytower --root			    \n\
   GL: 				mapscroller --root			    \n\
   GL: 				nakagin --root				    \n\
@@ -294,14 +289,13 @@ programs:								      \
   GL: 				cubocteversion --root			    \n\
 				droste --root				    \n\
   GL: 				papercube --root			    \n\
-  GL: 				skulloop --root				    \n\
+-  GL: 				skulloop --root				    \n\
   GL: 				highvoltage --root			    \n\
   GL: 				kallisti --root --wander		    \n\
   GL: 				klondike --root				    \n\
   GL: 				dumpsterfire --root			    \n\
   GL: 				hopffibration --root			    \n\
   GL: 				platonicfolding --root			    \n\
-- GL: 				boincscr --root				    \n\
   GL: 				starnest --root				    \n\
   GL: 				alienbeacon --root			    \n\
   GL: 				topologica --root			    \n\
@@ -337,4 +331,3 @@ programs:								      \
 
 pointerHysteresis:  10
 authWarningSlack:   20
-

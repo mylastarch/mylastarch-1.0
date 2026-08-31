@@ -1,0 +1,8 @@
+#!/usr/bin/env bash
+
+# Re-run GeoIP timezone detection whenever a usable connection comes up.
+case "$2" in
+    up|vpn-up|connectivity-change)
+        systemctl --no-block restart set-timezone.service
+        ;;
+esac

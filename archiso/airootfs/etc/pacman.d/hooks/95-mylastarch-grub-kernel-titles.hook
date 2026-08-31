@@ -1,0 +1,13 @@
+[Trigger]
+Operation = Install
+Operation = Upgrade
+Type = Package
+Target = grub
+
+[Action]
+Description = Adding numeric kernel versions to GRUB menu titles...
+When = PostTransaction
+Depends = bash
+Depends = gawk
+Depends = coreutils
+Exec = /usr/bin/bash /usr/local/sbin/mylastarch-grub-kernel-titles

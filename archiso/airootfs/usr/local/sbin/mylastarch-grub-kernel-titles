@@ -1,0 +1,54 @@
+#!/usr/bin/env bash
+set -euo pipefail
+
+target=${MYLASTARCH_GRUB_10_LINUX:-/etc/grub.d/10_linux}
+marker="# MYLASTARCH_NUMERIC_KERNEL_TITLES"
+
+if [[ ! -f "$target" ]]; then
+    echo "GRUB Linux generator not found: $target" >&2
+    exit 1
+fi
+
+# A GRUB package upgrade restores the stock generator. Patch each new copy once.
+if grep -qF "$marker" "$target"; then
+    exit 0
+fi
+
+if ! grep -qF '  args="$4"' "$target"; then
+    echo "Unsupported GRUB Linux generator: expected function anchor not found" >&2
+    exit 1
+fi
+
+temporary=$(mktemp "${target}.mylastarch.XXXXXX")
+trap 'rm -f "$temporary"' EXIT
+
+awk -v marker="$marker" '
+    $0 == "  args=\"$4\"" {
+        print
+        print ""
+        print "  " marker
+        print "  # Arch kernel image names identify the package (linux, linux-lts,"
+        print "  # and so on). Match that package to /usr/lib/modules to obtain the"
+        print "  # numeric release used only in the visible menu title."
+        print "  title_version=\"$version\""
+        print "  kernel_pkgbase=\"${version%.old}\""
+        print "  for module_dir in /usr/lib/modules/*; do"
+        print "    if [ -r \"${module_dir}/pkgbase\" ] &&"
+        print "       [ \"$(cat \"${module_dir}/pkgbase\")\" = \"$kernel_pkgbase\" ]; then"
+        print "      title_version=\"${module_dir##*/}\""
+        print "      break"
+        print "    fi"
+        print "  done"
+        next
+    }
+
+    /^[[:space:]]+title=.*gettext_printf/ {
+        gsub(/[$][{]version[}]/, "${title_version}")
+    }
+
+    { print }
+' "$target" > "$temporary"
+
+grep -qF "$marker" "$temporary"
+sh -n "$temporary"
+install -m 755 "$temporary" "$target"

@@ -1,5 +1,6 @@
 [Desktop Entry]
 Type=Service
+X-KDE-ServiceTypes=KonqPopupMenu/Plugin
 Name=Convert Image
 MimeType=image/jpeg;image/png;image/webp;
 X-KDE-Protocols=file

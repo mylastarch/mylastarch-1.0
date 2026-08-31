@@ -99,7 +99,6 @@ rsync
 rxvt-unicode-terminfo
 screen
 sdparm
-sequoia-sq
 sg3_utils
 smartmontools
 sof-firmware
@@ -160,7 +159,7 @@ cairo-dock-plug-ins
 
 #sound
 pipewire
-pipewire-media-session
+wireplumber
 pipewire-alsa
 pipewire-jack
 pipewire-zeroconf
@@ -185,5 +184,3 @@ gvfs-smb
 xdg-user-dirs-gtk
 lsb-release
 vivaldi
-
-

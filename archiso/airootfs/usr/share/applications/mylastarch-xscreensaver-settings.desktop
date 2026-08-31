@@ -1,0 +1,11 @@
+[Desktop Entry]
+Type=Application
+Name=XScreenSaver Settings
+GenericName=Screen Saver Settings
+Comment=Configure XScreenSaver display modes and options
+Exec=xscreensaver-demo
+TryExec=xscreensaver-demo
+Icon=preferences-desktop-screensaver
+Terminal=false
+Categories=Utility;
+StartupNotify=true

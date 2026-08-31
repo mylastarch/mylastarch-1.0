@@ -20,8 +20,6 @@ echo
 	desktop="plasma"
 	dmDesktop="plasma"
 
-	#mylastarchVersion='26.05.31'
-
 	isoLabel="mylastarch-1.0.0-$(date +%Y.%m.%d)-x86_64.iso"
 
 	# setting of the general parameters
@@ -148,7 +146,7 @@ echo
 		sed -i 's/^iso_name=.*/iso_name="mylastarch-1.0.0"/' "$buildFolder/archiso/profiledef.sh"
 		sed -i 's/^iso_label=.*/iso_label="mylastarch-1.0.0-$(date +%Y%m)"/' "$buildFolder/archiso/profiledef.sh"
 		sed -i 's/^ISO_CODENAME=.*/ISO_CODENAME=mylastarch-1.0.0/' "$buildFolder/archiso/airootfs/etc/dev-rel"
-		printf '%s\n' 'mylastarch-1.0.0' > "$buildFolder/archiso/airootfs/etc/hostname"
+		printf '%s\n' 'mylastarch' > "$buildFolder/archiso/airootfs/etc/hostname"
 		sed -i "s/^Session=.*/Session=$dmDesktop/" "$buildFolder/archiso/airootfs/etc/sddm.conf"
 
 	echo "Adding time to /etc/dev-rel"
@@ -161,13 +159,10 @@ echo
 echo "###########################################################"
 tput setaf 2
 echo "Phase 6 :"
-echo "- Cleaning the cache from /var/cache/pacman/pkg/"
+echo "- Reusing cached packages from /var/cache/pacman/pkg/"
 tput sgr0
 echo "###########################################################"
 echo
-
-	echo "Cleaning the cache from /var/cache/pacman/pkg/"
-	yes | sudo pacman -Scc
 
 echo
 echo "################################################################## "

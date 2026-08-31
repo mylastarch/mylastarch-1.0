@@ -13,6 +13,10 @@ echo "#################################"
 install -d /boot/grub/themes
 cp -a /usr/share/grub/themes/viper /boot/grub/themes/
 
+echo "Adding numeric kernel versions to GRUB menu titles"
+echo "#################################"
+/usr/local/sbin/mylastarch-grub-kernel-titles
+
 echo "#################################"
 echo "End mylastarch-before"
 echo "#################################"

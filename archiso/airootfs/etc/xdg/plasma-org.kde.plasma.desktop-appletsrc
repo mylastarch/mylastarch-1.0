@@ -148,7 +148,7 @@ popupHeight=451
 popupWidth=810
 
 [Containments][162][Applets][180][Configuration][Appearance]
-selectedTimeZones=America/Chicago,Local
+selectedTimeZones=Local
 showDate=false
 wheelChangesTimezone=true
 
