@@ -1,0 +1,14 @@
+[Trigger]
+Operation = Install
+Operation = Upgrade
+Type = Package
+Target = arch-update
+
+[Action]
+Description = Preventing Arch-Update from restarting the display manager...
+When = PostTransaction
+Depends = bash
+Depends = coreutils
+Depends = grep
+Depends = sed
+Exec = /usr/bin/bash /usr/local/sbin/mylastarch-arch-update-safety

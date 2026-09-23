@@ -1,0 +1,32 @@
+#!/usr/bin/env bash
+set -euo pipefail
+
+target=${MYLASTARCH_ARCH_UPDATE_RESTART_SERVICES:-/usr/share/arch-update/lib/restart_services.sh}
+ignore_option="-i display-manager.service"
+
+# Arch-Update already protects several login managers. Plasma Login Manager is
+# exposed under the generic display-manager.service alias, so protect that name
+# as well to prevent an update from terminating the graphical session.
+if [[ ! -f "$target" ]]; then
+    echo "Arch-Update service restart helper not found: $target" >&2
+    exit 0
+fi
+
+if grep -qF -- "$ignore_option" "$target"; then
+    exit 0
+fi
+
+if ! grep -qF -- 'checkservices -F -P -R ' "$target"; then
+    echo "Unsupported Arch-Update restart helper: checkservices anchor not found" >&2
+    exit 1
+fi
+
+temporary=$(mktemp "${target}.mylastarch.XXXXXX")
+trap 'rm -f "$temporary"' EXIT
+
+sed "0,/checkservices -F -P -R /s//checkservices -F -P -R ${ignore_option} /" \
+    "$target" > "$temporary"
+
+grep -qF -- "$ignore_option" "$temporary"
+bash -n "$temporary"
+install -m 755 "$temporary" "$target"

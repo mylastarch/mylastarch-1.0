@@ -17,6 +17,10 @@ echo "Adding numeric kernel versions to GRUB menu titles"
 echo "#################################"
 /usr/local/sbin/mylastarch-grub-kernel-titles
 
+echo "Protecting the graphical session from Arch-Update service restarts"
+echo "#################################"
+/usr/local/sbin/mylastarch-arch-update-safety
+
 echo "#################################"
 echo "End mylastarch-before"
 echo "#################################"

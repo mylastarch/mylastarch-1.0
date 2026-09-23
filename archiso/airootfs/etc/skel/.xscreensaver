@@ -31,11 +31,11 @@ imageDirectory:	/usr/share/backgrounds/mylastarch/xscreensaver-images/
 mode:		random
 selected:	-1
 
-textMode:	literal
+textMode:	url
 textLiteral:	XScreenSaver
 textFile:	
 textProgram:	fortune
-textURL:	https://en.wikipedia.org/w/index.php?title=Special:NewPages&feed=rss
+textURL:	 https://feeds.feedburner.com/blogspot/gJZg
 dialogTheme:	default
 settingsGeom:	8,100 2,68
 

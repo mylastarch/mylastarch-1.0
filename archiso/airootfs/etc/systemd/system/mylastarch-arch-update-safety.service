@@ -1,0 +1,11 @@
+[Unit]
+Description=Protect the graphical session from Arch-Update service restarts
+After=local-fs.target
+Before=display-manager.service
+
+[Service]
+Type=oneshot
+ExecStart=/usr/local/sbin/mylastarch-arch-update-safety
+
+[Install]
+WantedBy=multi-user.target

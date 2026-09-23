@@ -22,7 +22,7 @@ echo
 
 	#mylastarchVersion='26.05.31'
 
-	isoLabel="mylastarch-1.0.0-$(date +%Y.%m.%d)-x86_64.iso"
+	isoLabel="mylastarch-2026.09.01-x86_64.iso"
 
 	# setting of the general parameters
 	scriptDir="$(cd -- "$(dirname -- "${BASH_SOURCE[0]}")" && pwd)"
@@ -145,10 +145,11 @@ echo
 
 		echo "Changing all references"
 		echo
-		sed -i 's/^iso_name=.*/iso_name="mylastarch-1.0.0"/' "$buildFolder/archiso/profiledef.sh"
-		sed -i 's/^iso_label=.*/iso_label="mylastarch-1.0.0-$(date +%Y%m)"/' "$buildFolder/archiso/profiledef.sh"
-		sed -i 's/^ISO_CODENAME=.*/ISO_CODENAME=mylastarch-1.0.0/' "$buildFolder/archiso/airootfs/etc/dev-rel"
-		printf '%s\n' 'mylastarch-1.0.0' > "$buildFolder/archiso/airootfs/etc/hostname"
+		sed -i 's/^iso_name=.*/iso_name="mylastarch"/' "$buildFolder/archiso/profiledef.sh"
+		sed -i 's/^iso_label=.*/iso_label="MLA_20260901"/' "$buildFolder/archiso/profiledef.sh"
+		sed -i 's/^iso_version=.*/iso_version="2026.09.01"/' "$buildFolder/archiso/profiledef.sh"
+		sed -i 's/^ISO_CODENAME=.*/ISO_CODENAME=mylastarch-2026.09.01/' "$buildFolder/archiso/airootfs/etc/dev-rel"
+		printf '%s\n' 'mylastarch' > "$buildFolder/archiso/airootfs/etc/hostname"
 		sed -i "s/^Session=.*/Session=$dmDesktop/" "$buildFolder/archiso/airootfs/etc/sddm.conf"
 
 	echo "Adding time to /etc/dev-rel"

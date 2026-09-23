@@ -8,7 +8,9 @@ bcachefs-tools
 bind
 bolt
 brltty
-broadcom-wl
+broadcom-wl-dkms
+dkms
+linux-headers
 btrfs-progs
 #clonezilla
 cloud-init
@@ -174,10 +176,16 @@ fastfetch
 alacritty
 arch-update
 archlinux-tweak-tool-gtk4
+alacritty-tweak-tool
+downgrade
+firewalld
+firewall-config
 gittyup
 libreoffice-fresh
 masterpdfeditor-free
 pamac
+hplip
+python-pyqt5
 sublime-text-4
 thunderbird
 gwenview

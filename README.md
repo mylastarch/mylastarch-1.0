@@ -1,4 +1,4 @@
-# MY LAST ARCH 1.0.0
+# MY LAST ARCH 2026.09.01
 
 MY LAST ARCH is an Arch Linux-based live and installation image featuring the
 KDE Plasma desktop. The project originated from the Carli-13 ISO profile and is

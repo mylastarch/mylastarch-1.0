@@ -1,11 +1,11 @@
 #!/usr/bin/env bash
 # shellcheck disable=SC2034
 
-iso_name="mylastarch-1.0.0"
-iso_label="mylastarch-1.0.0-$(date +%Y%m)"
+iso_name="mylastarch"
+iso_label="MLA_20260901"
 iso_publisher="MY LAST ARCH Linux <https://www.dccwebsite.com/mylastarch.html>"
 iso_application="MY LAST ARCH Linux Live/Rescue DVD"
-iso_version="$(date +%Y.%m.%d)"
+iso_version="2026.09.01"
 install_dir="arch"
 buildmodes=('iso')
 bootmodes=('bios.syslinux'
@@ -28,6 +28,7 @@ file_permissions=(
   ["/usr/local/bin/mylastarch-before"]="0:0:755"
   ["/usr/local/bin/mylastarch-final"]="0:0:755"
   ["/usr/local/sbin/mylastarch-grub-kernel-titles"]="0:0:755"
+  ["/usr/local/sbin/mylastarch-arch-update-safety"]="0:0:755"
   ["/usr/local/libexec/plm-wallpaper-sync"]="0:0:755"
   ["/usr/local/bin/get-nemesis-on-mylastarch"]="0:0:755"
   ["/usr/local/bin/set-wallpaper.sh"]="0:0:755"
