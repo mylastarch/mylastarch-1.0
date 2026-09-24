@@ -1,0 +1,13 @@
+[Trigger]
+Operation = Install
+Operation = Upgrade
+Operation = Remove
+Type = Path
+Target = usr/lib/modules/*/vmlinuz
+
+[Action]
+Description = Updating the GRUB menu after a kernel change...
+When = PostTransaction
+Depends = bash
+Depends = grub
+Exec = /usr/bin/bash /usr/local/sbin/mylastarch-refresh-grub

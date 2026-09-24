@@ -1,0 +1,16 @@
+#!/usr/bin/env bash
+set -euo pipefail
+
+grub_config=/boot/grub/grub.cfg
+
+# This hook may remain installed on systems that use another bootloader.
+if [[ ! -d /boot/grub ]] || ! command -v grub-mkconfig >/dev/null 2>&1; then
+    exit 0
+fi
+
+# GRUB upgrades restore the stock 10_linux generator. Ensure the numeric
+# kernel-title customization is present before generating the new menu.
+/usr/local/sbin/mylastarch-grub-kernel-titles
+
+echo "Regenerating GRUB menu after kernel change..."
+grub-mkconfig -o "$grub_config"

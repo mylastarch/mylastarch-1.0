@@ -28,6 +28,7 @@ file_permissions=(
   ["/usr/local/bin/mylastarch-before"]="0:0:755"
   ["/usr/local/bin/mylastarch-final"]="0:0:755"
   ["/usr/local/sbin/mylastarch-grub-kernel-titles"]="0:0:755"
+  ["/usr/local/sbin/mylastarch-refresh-grub"]="0:0:755"
   ["/usr/local/sbin/mylastarch-arch-update-safety"]="0:0:755"
   ["/usr/local/libexec/plm-wallpaper-sync"]="0:0:755"
   ["/usr/local/bin/get-nemesis-on-mylastarch"]="0:0:755"
