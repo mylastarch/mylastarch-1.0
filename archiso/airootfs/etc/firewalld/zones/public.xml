@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<zone>
+  <short>Public</short>
+  <description>Public network zone with local network discovery for Dolphin.</description>
+  <service name="ssh"/>
+  <service name="dhcpv6-client"/>
+  <service name="mdns"/>
+  <service name="samba-client"/>
+  <service name="ws-discovery-client"/>
+  <forward/>
+</zone>

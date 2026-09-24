@@ -29,7 +29,7 @@ echo
 	repoDir="$(dirname -- "$scriptDir")"
 	sourceProfile="$repoDir/archiso"
 	readmeFile="$repoDir/archiso.readme"
-	archisoRequiredVersion="archiso 89-1"
+	archisoRequiredVersion="archiso 90-1"
 	buildFolder="$HOME/mylastarch-build"
 	outFolder="$HOME/mylastarch-Out"
 	archisoVersion="$(pacman -Q archiso)"
@@ -51,14 +51,25 @@ echo
 		echo "##################################################################"
 		tput sgr0
 	else
-	tput setaf 1
-	echo "###################################################################################################"
-	echo "You need to install the correct version of Archiso"
-	echo "Use 'sudo downgrade archiso' to do that"
-	echo "or update your system"
-	echo "###################################################################################################"
-	tput sgr0
-	exit 1
+		tput setaf 3
+		echo "###################################################################################################"
+		echo "Configured Archiso version : $archisoRequiredVersion"
+		echo "Installed Archiso version  : $archisoVersion"
+		echo "###################################################################################################"
+		tput sgr0
+		read -r -p "Build using $archisoVersion and save it for future builds? [y/N] " useInstalledArchiso
+		if [[ "$useInstalledArchiso" =~ ^[Yy]$ ]]; then
+			for buildScript in \
+				"$repoDir/build-iso-scripts/30-build-the-iso-the-first-time.sh" \
+				"$repoDir/build-iso-scripts/40-build-the-iso-local-again.sh"; do
+				sed -i "0,/^[[:space:]]*archisoRequiredVersion=/{s|^[[:space:]]*archisoRequiredVersion=.*|\tarchisoRequiredVersion=\"$archisoVersion\"|}" "$buildScript"
+			done
+			archisoRequiredVersion="$archisoVersion"
+			echo "Saved $archisoVersion as the configured version. Continuing ..."
+		else
+			echo "Build cancelled. The configured Archiso version was not changed."
+			exit 1
+		fi
 	fi
 
 echo
