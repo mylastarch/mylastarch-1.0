@@ -19,6 +19,7 @@ cp -aT /etc/skel/ /root/
 echo "Cleanup autologin root"
 echo "#################################"
 rm -rf /etc/systemd/system/getty@tty1.service.d
+rm -f /etc/plasmalogin.conf.d/10-mylastarch-live-autologin.conf
 
 echo "Setting editor to nano"
 echo "#################################"
@@ -31,6 +32,14 @@ rm -f /etc/polkit-1/rules.d/49-nopasswd_global.rules
 rm -rf /etc/systemd/system/etc-pacman.d-gnupg.mount
 rm -f /root/.automated_script.sh /root/.zlogin
 mv -f /etc/mylastarch-release /etc/lsb-release
+
+echo "Configure detected hardware drivers"
+echo "#################################"
+if command -v mylastarch-hwtool >/dev/null 2>&1; then
+    mylastarch-hwtool --configure-installed
+else
+    echo "WARNING: mylastarch-hwtool is not installed; skipping hardware profile setup" >&2
+fi
 
 echo "Permission of root"
 echo "#################################"

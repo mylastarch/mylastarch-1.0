@@ -1,0 +1,11 @@
+[Desktop Entry]
+Type=Application
+Version=1.0
+Name=Welcome to MyLastArch
+GenericName=Getting Started Guide
+Comment=Installation, hardware, updates, and support information
+Exec=/usr/local/bin/mylastarch-welcome
+Icon=help-about
+Terminal=false
+StartupNotify=true
+Categories=System;Documentation;

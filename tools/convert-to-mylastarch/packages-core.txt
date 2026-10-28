@@ -1,0 +1,46 @@
+# KDE and MyLastArch desktop foundation (Arch repository package names)
+plasma-meta
+konsole
+dolphin
+kio-extras
+kio-admin
+kate
+gwenview
+partitionmanager
+plasma-login-manager
+sddm
+
+# Desktop integration
+cairo-dock
+cairo-dock-plug-ins
+papirus-icon-theme
+adw-gtk-theme
+vimix-cursors
+appmenu-gtk-module
+libayatana-appindicator
+xdg-user-dirs-gtk
+gvfs
+gvfs-smb
+fastfetch
+imagemagick
+rsync
+jq
+
+# Audio, Bluetooth, printing, and discovery
+pipewire
+pipewire-alsa
+pipewire-jack
+pipewire-pulse
+wireplumber
+pavucontrol
+bluez
+bluez-utils
+avahi
+nss-mdns
+cups
+cups-browsed
+print-manager
+system-config-printer
+ipp-usb
+gutenprint
+ghostscript

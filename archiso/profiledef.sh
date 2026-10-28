@@ -2,10 +2,10 @@
 # shellcheck disable=SC2034
 
 iso_name="mylastarch"
-iso_label="MLA_20260901"
+iso_label="MLA_20261101"
 iso_publisher="MY LAST ARCH Linux <https://www.dccwebsite.com/mylastarch.html>"
 iso_application="MY LAST ARCH Linux Live/Rescue DVD"
-iso_version="2026.09.01"
+iso_version="2026.11.01"
 install_dir="arch"
 buildmodes=('iso')
 bootmodes=('bios.syslinux'
@@ -15,7 +15,7 @@ airootfs_image_type="squashfs"
 airootfs_image_tool_options=('-comp' 'xz' '-Xbcj' 'x86' '-b' '1M' '-Xdict-size' '1M')
 bootstrap_tarball_compression=('zstd' '-c' '-T0' '--auto-threads=logical' '--long' '-19')
 file_permissions=(
-  ["/root/.gnupg"]="0:0:400"
+  ["/root/.gnupg"]="0:0:700"
   ["/etc/shadow"]="0:0:400"
   ["/etc/gshadow"]="0:0:400"
   ["/root"]="0:0:750"
@@ -34,6 +34,7 @@ file_permissions=(
   ["/usr/local/bin/get-nemesis-on-mylastarch"]="0:0:755"
   ["/usr/local/bin/set-wallpaper.sh"]="0:0:755"
   ["/usr/local/bin/set-timezone.sh"]="0:0:755"
+  ["/usr/local/bin/mylastarch-welcome"]="0:0:755"
   ["/etc/NetworkManager/dispatcher.d/90-set-timezone"]="0:0:755"
   ["/usr/local/bin/mylastarch-dolphin-action"]="0:0:755"
   ["/usr/share/kio/servicemenus/mylastarch-actions.desktop"]="0:0:755"
@@ -41,6 +42,7 @@ file_permissions=(
   ["/usr/share/kio/servicemenus/mylastarch-hidden-files.desktop"]="0:0:755"
   ["/etc/skel/calamares.desktop"]="0:0:755"
   ["/etc/skel/Desktop/calamares.desktop"]="0:0:755"
+  ["/etc/skel/Desktop/mylastarch-welcome.desktop"]="0:0:755"
   ["/var/lib/iwd"]="0:0:700"
   ["/opt/vivaldi/initial_preferences"]="0:0:644"
 )

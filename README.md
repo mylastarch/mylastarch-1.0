@@ -1,4 +1,4 @@
-# MY LAST ARCH 2026.09.01
+# MY LAST ARCH 2026.11.01
 
 MY LAST ARCH is an Arch Linux-based live and installation image featuring the
 KDE Plasma desktop. The project originated from the Carli-13 ISO profile and is
@@ -13,13 +13,14 @@ now maintained as an independent distribution.
 - Cairo-Dock with a curated launcher set
 - Dolphin Actions submenu for common file-management tasks
 - Gwenview image viewing and resizing
+- MyLastArch hardware profiles for GPUs, virtual machines, and Broadcom Wi-Fi
 
 ## Build requirements
 
 The ISO must be built on Arch Linux with the required Archiso release:
 
 ```text
-archiso 89-1
+archiso 91-1
 ```
 
 Install Archiso with Pacman. If the repository has moved to a newer release,

@@ -1,0 +1,9 @@
+# Optional applications shipped by the full MyLastArch image.
+alacritty
+libreoffice-fresh
+thunderbird
+meld
+strawberry
+xscreensaver
+variety
+vivaldi

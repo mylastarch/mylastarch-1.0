@@ -1,0 +1,20 @@
+#!/usr/bin/env bash
+set -euo pipefail
+
+page=/usr/share/doc/mylastarch/welcome.html
+
+if [[ ${1:-} == "--autostart" ]]; then
+    state_dir=${XDG_STATE_HOME:-"$HOME/.local/state"}/mylastarch
+    marker="$state_dir/welcome-shown"
+    [[ -e $marker ]] && exit 0
+
+    mkdir -p -- "$state_dir"
+    touch -- "$marker"
+fi
+
+if [[ ! -f $page ]]; then
+    echo "MyLastArch Welcome page was not found: $page" >&2
+    exit 1
+fi
+
+exec xdg-open "file://$page"

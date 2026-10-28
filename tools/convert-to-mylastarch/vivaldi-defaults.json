@@ -1,0 +1,17 @@
+{
+  "vivaldi": {
+    "system": {
+      "search_engine": {
+        "default": {
+          "index": 5
+        }
+      }
+    },
+    "tabs": {
+      "new_page": {
+        "custom_url": "https://www.dccwebsite.com/",
+        "link": 4
+      }
+    }
+  }
+}

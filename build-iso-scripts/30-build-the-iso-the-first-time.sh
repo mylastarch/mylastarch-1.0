@@ -20,14 +20,14 @@ echo
 	desktop="plasma"
 	dmDesktop="plasma"
 
-	isoLabel="mylastarch-2026.09.01-x86_64.iso"
+	isoLabel="mylastarch-2026.11.01-x86_64.iso"
 
 	# setting of the general parameters
 	scriptDir="$(cd -- "$(dirname -- "${BASH_SOURCE[0]}")" && pwd)"
 	repoDir="$(dirname -- "$scriptDir")"
 	sourceProfile="$repoDir/archiso"
 	readmeFile="$repoDir/archiso.readme"
-	archisoRequiredVersion="archiso 90-1"
+	archisoRequiredVersion="archiso 91-1"
 	buildFolder="$HOME/mylastarch-build"
 	outFolder="$HOME/mylastarch-Out"
 	archisoVersion="$(pacman -Q archiso)"
@@ -155,9 +155,9 @@ echo
 		echo "Changing all references"
 		echo
 		sed -i 's/^iso_name=.*/iso_name="mylastarch"/' "$buildFolder/archiso/profiledef.sh"
-		sed -i 's/^iso_label=.*/iso_label="MLA_20260901"/' "$buildFolder/archiso/profiledef.sh"
-		sed -i 's/^iso_version=.*/iso_version="2026.09.01"/' "$buildFolder/archiso/profiledef.sh"
-		sed -i 's/^ISO_CODENAME=.*/ISO_CODENAME=mylastarch-2026.09.01/' "$buildFolder/archiso/airootfs/etc/dev-rel"
+		sed -i 's/^iso_label=.*/iso_label="MLA_20261101"/' "$buildFolder/archiso/profiledef.sh"
+		sed -i 's/^iso_version=.*/iso_version="2026.11.01"/' "$buildFolder/archiso/profiledef.sh"
+		sed -i 's/^ISO_CODENAME=.*/ISO_CODENAME=mylastarch-2026.11.01/' "$buildFolder/archiso/airootfs/etc/dev-rel"
 		printf '%s\n' 'mylastarch' > "$buildFolder/archiso/airootfs/etc/hostname"
 		sed -i "s/^Session=.*/Session=$dmDesktop/" "$buildFolder/archiso/airootfs/etc/sddm.conf"
 

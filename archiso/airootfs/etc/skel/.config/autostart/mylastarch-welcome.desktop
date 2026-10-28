@@ -1,0 +1,10 @@
+[Desktop Entry]
+Type=Application
+Version=1.0
+Name=MyLastArch Welcome
+Comment=Open the MyLastArch getting-started guide once
+Exec=/usr/local/bin/mylastarch-welcome --autostart
+Icon=help-about
+Terminal=false
+OnlyShowIn=KDE;
+X-KDE-autostart-after=panel

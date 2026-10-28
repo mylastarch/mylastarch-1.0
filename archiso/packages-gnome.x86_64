@@ -9,7 +9,9 @@ arch-install-scripts
 archinstall
 b43-fwcutter
 base
+base-devel
 bcachefs-tools
+perl-lwp-protocol-https
 bind
 bolt
 brltty

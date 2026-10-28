@@ -1,0 +1,9 @@
+[Desktop Entry]
+Type=Application
+Name=XScreenSaver Settings
+Comment=Choose and configure the screen saver
+Exec=xscreensaver-settings
+Icon=xscreensaver
+Categories=Settings;DesktopSettings;Screensaver;Security;
+Terminal=false
+OnlyShowIn=KDE;

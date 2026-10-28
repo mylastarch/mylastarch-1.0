@@ -1,0 +1,122 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Welcome to MyLastArch</title>
+  <style>
+    :root { color-scheme: light dark; --accent:#1793d1; --green:#1d9e75; --card:#ffffff; --ink:#173042; --muted:#5c6972; --line:#d8e2e8; --code:#edf5f8; }
+    @media (prefers-color-scheme:dark) { :root { --card:#20272c; --ink:#eef6fa; --muted:#bac7ce; --line:#3a4850; --code:#151c20; } }
+    * { box-sizing:border-box; }
+    body { margin:0; font-family:system-ui,-apple-system,"Noto Sans",sans-serif; color:var(--ink); background:linear-gradient(135deg,#1793d122,#1d9e7518); line-height:1.45; }
+    header { padding:44px 7vw 34px; color:white; background:linear-gradient(120deg,#0d6f9f,#13866a); }
+    header h1 { margin:0 0 8px; font-size:clamp(2rem,5vw,3.6rem); }
+    header p { margin:0; max-width:850px; font-size:1.12rem; opacity:.94; }
+    main { width:min(1180px,92vw); margin:28px auto 60px; }
+    .notice { padding:18px 22px; border-left:5px solid var(--accent); background:var(--card); border-radius:10px; box-shadow:0 8px 24px #00000014; }
+    .grid { display:grid; grid-template-columns:repeat(auto-fit,minmax(290px,1fr)); gap:20px; margin-top:22px; }
+    section { padding:22px; background:var(--card); border:1px solid var(--line); border-radius:14px; box-shadow:0 8px 24px #00000010; }
+    h2 { margin:0 0 12px; color:var(--accent); font-size:1.32rem; }
+    h3 { margin:18px 0 7px; font-size:1rem; }
+    p, ul { margin-top:8px; }
+    ul { padding-left:21px; }
+    li { margin:6px 0; }
+    code { display:block; margin:8px 0; padding:10px 12px; overflow-wrap:anywhere; color:var(--ink); background:var(--code); border-radius:7px; user-select:all; }
+    a { color:var(--accent); font-weight:600; }
+    .tag { display:inline-block; margin:0 7px 7px 0; padding:5px 9px; border-radius:999px; color:#075541; background:#dff5ed; font-size:.88rem; font-weight:650; }
+    footer { text-align:center; color:var(--muted); margin-top:28px; }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Welcome to MyLastArch</h1>
+    <p>MyLastArch 2026.11.01 combines the flexibility of Arch Linux with a polished KDE Plasma desktop and practical defaults for everyday use.</p>
+  </header>
+
+  <main>
+    <div class="notice">
+      <strong>Running the live session?</strong> Connect to the internet, explore the desktop, then double-click <strong>Install MY LAST ARCH</strong> on the desktop when you are ready. Your disks are not changed until you confirm the installation choices.
+    </div>
+
+    <div class="grid">
+      <section>
+        <h2>Install MyLastArch</h2>
+        <ul>
+          <li>Connect to Wi-Fi or Ethernet first.</li>
+          <li>Open the installer from the desktop.</li>
+          <li>Review the summary carefully before installation begins.</li>
+          <li>The default computer name is <strong>mylastarch</strong>.</li>
+        </ul>
+      </section>
+
+      <section>
+        <h2>Hardware Support</h2>
+        <p>The installer automatically configures detected graphics, virtual-machine tools, and compatible Broadcom wireless hardware.</p>
+        <h3>Show recommendations</h3>
+        <code>mylastarch-hwtool --recommended</code>
+        <h3>Check installed packages</h3>
+        <code>mylastarch-hwtool --check</code>
+        <h3>Install or repair recommendations</h3>
+        <code>sudo mylastarch-hwtool --install-recommended</code>
+        <p><strong>Tip:</strong> Run the install/repair command on the installed system, not the temporary live session.</p>
+      </section>
+
+      <section>
+        <h2>Getting Started</h2>
+        <ul>
+          <li>Use <strong>Arch Update</strong> in the system tray for updates.</li>
+          <li>Browse Windows network shares in Dolphin under Network.</li>
+          <li>Manage printers from the Plasma system tray or System Settings.</li>
+          <li>Use Ark for archives and Gwenview for viewing and resizing images.</li>
+          <li>Change wallpapers with Variety or the desktop context menu.</li>
+        </ul>
+      </section>
+
+      <section>
+        <h2>November Highlights</h2>
+        <span class="tag">Hardware Tool</span><span class="tag">Firewalld</span><span class="tag">Power Profiles</span><span class="tag">Ark</span><span class="tag">WirePlumber</span>
+        <ul>
+          <li>Updated KDE Plasma and Linux kernel</li>
+          <li>Updated Sublime Text and Arch Update</li>
+          <li>Improved hardware and Broadcom Wi-Fi configuration</li>
+          <li>Firewall, power, archive, and audio integration</li>
+        </ul>
+      </section>
+
+      <section>
+        <h2>Safe Arch Updates</h2>
+        <p>MyLastArch is a rolling-release system. Always perform a complete upgrade rather than a partial upgrade.</p>
+        <code>sudo pacman -Syu</code>
+        <p>Avoid running <code>pacman -Sy</code> by itself. Arch Update also checks Arch news and helps with post-update tasks.</p>
+      </section>
+
+      <section>
+        <h2>System Information</h2>
+        <p>Useful commands when requesting help:</p>
+        <code>uname -r</code>
+        <code>mylastarch-hwtool --recommended</code>
+        <code>lspci -k</code>
+        <p>Do not post passwords, authentication tokens, private keys, or unedited personal information.</p>
+      </section>
+
+      <section>
+        <h2>Useful Links</h2>
+        <ul>
+          <li><a href="https://www.dccwebsite.com/mylastarch.html">Visit the MyLastArch website</a></li>
+          <li><a href="https://www.dccwebsite.com/mylastarch-converter">MyLastArch Converter</a></li>
+          <li><a href="https://wiki.archlinux.org/">ArchWiki</a></li>
+          <li><a href="https://github.com/mylastarch">MyLastArch on GitHub</a></li>
+        </ul>
+      </section>
+
+      <section>
+        <h2>Find This Page Later</h2>
+        <p>Open <strong>Welcome to MyLastArch</strong> from the application menu or its desktop shortcut at any time.</p>
+        <p>A newly created account opens this guide automatically only once.</p>
+      </section>
+    </div>
+
+    <footer>MYLASTARCH 2026.11.01 · ARCH LINUX · KDE PLASMA</footer>
+  </main>
+</body>
+</html>

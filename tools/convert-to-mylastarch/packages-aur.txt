@@ -1,0 +1,4 @@
+# Optional community packages. The converter first checks enabled pacman
+# repositories, then uses Yay for anything still unavailable.
+arch-update
+sublime-text-4

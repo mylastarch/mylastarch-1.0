@@ -4,7 +4,9 @@ arch-install-scripts
 archinstall
 b43-fwcutter
 base
+base-devel
 bcachefs-tools
+perl-lwp-protocol-https
 bind
 bolt
 brltty
@@ -100,6 +102,7 @@ reflector
 rsync
 rxvt-unicode-terminfo
 screen
+sequoia-sq
 sdparm
 sg3_utils
 smartmontools
@@ -161,6 +164,25 @@ kio-admin
 #mylastarch-keyring
 chaotic-keyring
 fwupd
+mylastarch-hwtool
+mesa
+vulkan-intel
+intel-media-driver
+libva-intel-driver
+vpl-gpu-rt
+vulkan-radeon
+vulkan-nouveau
+vulkan-swrast
+vulkan-virtio
+gst-plugin-va
+nvidia-open-dkms
+nvidia-utils
+nvidia-settings
+opencl-nvidia
+libva-nvidia-driver
+egl-wayland
+libxnvctrl
+spice-vdagent
 
 #calamares
 calamares
@@ -176,10 +198,12 @@ fastfetch
 alacritty
 arch-update
 archlinux-tweak-tool-gtk4
+ark
 alacritty-tweak-tool
 downgrade
 firewalld
 firewall-config
+power-profiles-daemon
 gittyup
 libreoffice-fresh
 masterpdfeditor-free

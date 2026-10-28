@@ -7,7 +7,17 @@
     "import_search_engine": false,
     "import_saved_passwords": false
   },
-  "first_run_tabs": [
-    "vivaldi://settings/sync/"
-  ]
+  "vivaldi": {
+    "startup": {
+      "has_seen_feature": 1,
+      "has_seen_welcome_page": true,
+      "last_seen_version": "1.0.0.0"
+    },
+    "tabs": {
+      "new_page": {
+        "custom_url": "https://www.dccwebsite.com/",
+        "link": 4
+      }
+    }
+  }
 }
